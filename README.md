@@ -1,11 +1,10 @@
 # smeerws-Randomness
 
 ### Project description: 
-Introduction/Project summary 
-2D Unity project to showcase some different examples for using Randomness (System.Random and UnityEngine.Random).
+A 2D Unity project to showcase some different examples for using Randomness (System.Random and UnityEngine.Random).
 The first example shows how to randomly change text.
-The second example ranomize the color of sprites.
-Whith the third and fourth example change the position and size based on a randomzider.
+The second example randomizes the color of sprites.
+With the third and fourth example change the position and size based on a randomizer.
 The last example shows how simply shuffle colors of UI Images when using Lists. 
 
 Links: 
@@ -21,7 +20,6 @@ Win 10, Unity Version: 2020.1.5f1, Visual Studio Version: VS Community 2019;
 WebGL (reference resolution 960x600)
 
 ### Visuals: 
-Screenshots (concept and experience), Video
 <img width="500" alt="ar-vr studio sc1" src="./Screenshots/randomness.JPG">
 
 ### Necessary setup/execution steps: 
