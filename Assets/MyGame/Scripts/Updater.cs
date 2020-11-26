@@ -5,35 +5,51 @@ using UnityEngine.UI;
 
 public class Updater : MonoBehaviour {
 
-    public Text text;
-    public string inputtext;
-    public GameObject circleColor;
-    public Color color;
-    public GameObject[] shuffleCircles;
+    [SerializeField] private Text randomText;
+    [SerializeField] private GameObject circleColor;
+    //[SerializeField] private Color color;
+    [SerializeField] private GameObject circleObjPosition, circPosLeft, circPosRight;
+    [SerializeField] private GameObject[] circleSizeObjects;
+    [SerializeField] private List<Image> colorImages;
 
-    [SerializeField] GameObject circlePosition;
 
     private List<Color> colorList;
     private System.Random rnd = new System.Random();
-    
+    private string[] stringArray = new string[5];
+    private float circLeft, circRight;
+    private Transform circTransform;
+
     private void Start()
     {
-        inputtext = "change text";
+        circTransform = circleObjPosition.GetComponent<Transform>();
+        Transform left = circPosLeft.GetComponent<Transform>();
+        Transform right = circPosRight.GetComponent<Transform>();
+
+        circLeft = left.localPosition.x;
+        circRight = right.localPosition.x;
+
+
+        stringArray = new string[] { "one", "two", "three", "four", "five" };
 
         colorList = new List<Color> {
             Color.red,
             Color.blue,
-            Color.green
+            Color.green,
             Color.magenta
         };
+
+        for (int i = 0; i < colorImages.Count; i++)
+        {
+            colorImages[i].color = colorList[i];
+        }
     }
 
-    public void UpdateTextWithInspectorInput()
+    public void UpdateRandomText()
     {
-        Text.text = inputtext;
+        randomText.text = stringArray[rnd.Next(1,5)];
     }
 
-    public void UpdateCircleColor()
+    public void ShuffleCircleColor()
     {
         SpriteRenderer circRenderer = circleColor.GetComponent<SpriteRenderer>();
         byte r = (byte)rnd.Next(0, 255);
@@ -44,28 +60,40 @@ public class Updater : MonoBehaviour {
         circRenderer.color = new Color32(r, g, b, a);
     }
 	
-    public void UpdateObjectPosition()
+    public void ShuffleObjectPosition()
     {
-        Transform circTransform = circlePosition.GetComponent<Transform>();
-        
-        float randomPosX = UnityEngine.Random.Next(5, 433);
+        float randomPosX = UnityEngine.Random.Range(circLeft, circRight);
         circTransform.localPosition = new Vector3(randomPosX, circTransform.localPosition.y, circTransform.localPosition.z);
     }
 
-    public void ShuffleColorsInCircles()
+    public void ShuffleCirclesSize()
     {
-        List<SpriteRenderer> objectList = new List<SpriteRenderer>();
+        int objIndex = rnd.Next(0, circleSizeObjects.Length);
         
-        foreach(GameObject item in shuffleCircles)
-        {
-            objectList.Add(item.GetComponent<SpriteRenderer>());
-        }
+        SetCircObjectActive(objIndex);
+    }
 
+    public void ShuffleImageColors()
+    {
         colorList.Shuffle();
 
-        for(int i = 0; i < objectList.Count; i++)
+        for (int i = 0; i < colorImages.Count; i++)
         {
-            objectList[i].color = colorList[i];
+            colorImages[i].color = colorList[i];
+        }
+    }
+
+    private void SetCircObjectActive(int index)
+    {
+        SetAllCircObjectsInactive();
+        circleSizeObjects[index].SetActive(true);
+    }
+
+    private void SetAllCircObjectsInactive()
+    {
+        for(int i=0; i < circleSizeObjects.Length; i++)
+        {
+            circleSizeObjects[i].SetActive(false);
         }
     }
 }
