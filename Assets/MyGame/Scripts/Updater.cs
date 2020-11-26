@@ -7,7 +7,6 @@ public class Updater : MonoBehaviour {
 
     [SerializeField] private Text randomText;
     [SerializeField] private GameObject circleColor;
-    //[SerializeField] private Color color;
     [SerializeField] private GameObject circleObjPosition, circPosLeft, circPosRight;
     [SerializeField] private GameObject[] circleSizeObjects;
     [SerializeField] private List<Image> colorImages;
