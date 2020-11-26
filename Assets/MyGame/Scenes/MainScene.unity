@@ -2389,7 +2389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomText: {fileID: 865068795}
   circleColor: {fileID: 1309939058}
-  circleObjPosition: {fileID: 0}
+  circleObjPosition: {fileID: 1029368350}
   circPosLeft: {fileID: 850012132}
   circPosRight: {fileID: 1197451605}
   circleSizeObjects:
