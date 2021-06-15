@@ -22,26 +22,10 @@ WebGL (reference resolution 960x600)
 ### Visuals: 
 <img width="500" alt="ar-vr studio sc1" src="./Screenshots/randomness.JPG">
 
-### Necessary setup/execution steps: 
-Installation process, e.g. step by step instructions that I can run the project after cloning it
-None
-
-### Third party material: 
-(if used Fonts, Sounds, Music, Graphics, Materials, Code etc.)
-None
-
-### Project state: 
-100 percent
-
-### Limitations: 
-None
-
 ### Lessons Learned: 
 + System.Random unequal to UnityEngine.Random
 + Using randomness to manipulate the size and the position of objects
 + Using array and lists (method shuffle)
-
-
 
 Copyright by smeerws
 
