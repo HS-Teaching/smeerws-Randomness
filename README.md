@@ -17,7 +17,7 @@ Links:
 Win 10, Unity Version: 2020.1.5f1, Visual Studio Version: VS Community 2019;
 
 ### Target platform: 
-WebGL (reference resolution 960x600)
+WebGL (reference resolution 960x600): Play it: https://hs-teaching.github.io/smeerws-Randomness/
 
 ### Visuals: 
 <img width="500" alt="ar-vr studio sc1" src="./Screenshots/randomness.JPG">
